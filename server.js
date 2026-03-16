@@ -1,15 +1,9 @@
-const express = require("express");
-const cors = require("cors");
+const http = require("http");
 
-const app = express();
-
-app.use(cors());
-app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.send("Backend running");
+const server = http.createServer((req, res) => {
+  res.end("Server running");
 });
 
-app.listen(5000, () => {
+server.listen(5000, () => {
   console.log("Server running on port 5000");
 });
